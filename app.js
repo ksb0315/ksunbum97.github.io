@@ -1,16 +1,12 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const h1 = document.querySelector(".hello h1");
 
 function handleh1Click() {
-    const cur_col = h1.style.color;
-    let newCol;
-    console.log(cur_col);
-    if (cur_col === "blue") {
-        newCol = "tomato";
+    const clickedClass = "active"
+    if (h1.classList.contains(clickedClass)) {
+        h1.classList.remove(clickedClass);
+    }else {
+        h1.classList.add(clickedClass)
     }
-    else {
-        newCol = "blue";
-    }
-    h1.style.color = newCol;
 }
 
 h1.addEventListener("click", handleh1Click)

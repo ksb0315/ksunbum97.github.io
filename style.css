@@ -3,6 +3,15 @@ body {
     padding: 20px;
 }
 
-#hello {
-    text-shadow: 10em;
+h1 {
+    color: cyan;
+    transition: color 0.4s ease-in-out;
+}
+
+.active {
+    color: tomato;
+}
+
+.sexy-font {
+    font-family:'Courier New', Courier, monospace;
 }
