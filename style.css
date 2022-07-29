@@ -1,7 +1,8 @@
 body {
-    background-color: bisque;
+    background-color: beige;
+    padding: 20px;
 }
 
-.header1 {
-    text-emphasis-color: pink;
+#hello {
+    text-shadow: 10em;
 }

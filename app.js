@@ -1,5 +1,18 @@
-document.title = "Cloned 모멘텀"
-let head =  'Got you!'
+const title = document.querySelector("div.hello:first-child h1");
 
-document.getElementById("header1").textContent = head
-console.log(head)
+console.dir(title)
+function handleTitleClick() {
+    title.style.color = "blue";
+}
+
+function mouseEnter() {
+    title.innerText = "mouse is here";
+}
+
+function mouseLeave() {
+    title.innerText = "mouse leaved..";
+}
+
+title.addEventListener("click", handleTitleClick)
+title.addEventListener("mouseenter", mouseEnter)
+title.addEventListener("mouseleave", mouseLeave)
