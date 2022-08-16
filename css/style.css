@@ -102,7 +102,7 @@ to {
     "time todo-form player";
     place-items: center;
     /* border: 1px solid #000; */
-    /* grid-row-gap:20px; */
+    grid-row-gap:20px;
 }
 
 #time {
@@ -118,7 +118,7 @@ to {
 #player {
     grid-area: player;
     float: right;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
 #todo-form {
