@@ -33,10 +33,6 @@ h2 {
     display: inline-block;
 }
 
-.hidden {
-    display: none;
-}
-
 input[type=text] {
     width: 700px;
     height: 50px;
@@ -58,6 +54,33 @@ input[type=submit] {
     outline: none;
     padding-left: 10px;
     background-color: rgb(233, 233, 233);
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    display: grid;
+    height: 550px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+    grid-gap: 20px;
+    border: black solid;
+}
+
+.left {
+    grid-area: left;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.calender {
+    grid-area: right;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.2);
 }
 
 #change-name {
@@ -165,3 +188,5 @@ to {
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
+
+
