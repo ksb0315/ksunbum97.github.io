@@ -29,7 +29,6 @@ function paintGreetings(username) {
     
     const logout = document.createElement("button");
     logout.innerText = "Log out";
-    logout.id = "logout-button"
     logout.addEventListener("click", onLogoutSubmit);
     greeting.appendChild(logout);
     
