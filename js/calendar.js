@@ -32,47 +32,33 @@ caption.style.padding = "10px 20px";
 caption.innerText = `${calenderYear}년 ${calenderMonth}월`;
 calenderLayout.appendChild(caption);
 
-var thread = document.createElement("thread");
+var thead = document.createElement("thead");
 var columnDate = document.createElement("tr");
 
 var il = document.createElement("th");
-il.style.padding = "10px 10px";
-il.style.textAlign = "center";
 il.innerText = "일";
 columnDate.appendChild(il);
 var wal = document.createElement("th");
-wal.style.padding = "10px 10px";
-wal.style.textAlign = "center";
 wal.innerText = "월";
 columnDate.appendChild(wal);
 var hwa = document.createElement("th");
-hwa.style.padding = "10px 10px";
-hwa.style.textAlign = "center";
 hwa.innerText = "화";
 columnDate.appendChild(hwa);
 var su = document.createElement("th");
 su.innerText = "수";
-su.style.padding = "10px 10px";
-su.style.textAlign = "center";
 columnDate.appendChild(su);
 var mok = document.createElement("th");
-mok.style.padding = "10px 10px";
-mok.style.textAlign = "center";
 mok.innerText = "목";
 columnDate.appendChild(mok);
 var kum = document.createElement("th");
-kum.style.padding = "10px 10px";
-kum.style.textAlign = "center";
 kum.innerText = "금";
 columnDate.appendChild(kum);
 var toe = document.createElement("th");
 toe.innerText = "토";
-toe.style.padding = "10px 10px";
-toe.style.textAlign = "center";
 columnDate.appendChild(toe);
 
-thread.appendChild(columnDate);
-calenderLayout.appendChild(thread);
+thead.appendChild(columnDate);
+calenderLayout.appendChild(thead);
 
 var tbody = document.createElement("tbody");
 
@@ -91,6 +77,12 @@ for (let index = 0; index < calenderWeekCount; index++) {
             span.style.display = "block";
             span.style.padding = "10px 10px";
             span.innerText = `${calenderDay}`;
+            if (calenderDay == calenderToday) {
+                span.style.border = "1px solid red";
+                span.style.borderRadius = "50%";
+                span.style.color = "white";
+                span.style.backgroundColor = "red";
+            }
             td.appendChild(span);
         }
         tr.appendChild(td);
