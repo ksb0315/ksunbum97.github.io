@@ -84,11 +84,16 @@ button:active {
     display: grid;
     height: 550px;
     width: 100%;
+    padding-top: 20px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "left right";
     grid-gap: 20px;
     /*border: black solid;*/
+}
+
+#containerID {
+    display: none;
 }
 
 .left {
@@ -313,11 +318,32 @@ to {
     font-style: italic;
 }
 
+
+.set-quote {
+    height: 80vh;
+    text-align: center;
+}
+
+#quote-box {
+    width: 60%;
+    height: 20%;
+    margin: 20% auto;
+}
+
+.set-quote #quote-box span:first-child {
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.set-quote #quote-box span:last-child {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 20%;
+}
+
 #weather {
     display: inline-block;
     padding-top: 20px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
-
-

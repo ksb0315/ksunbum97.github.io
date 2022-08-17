@@ -4,6 +4,9 @@ const greeting = document.querySelector("#greeting");
 const todoForm = document.querySelector("#todoF");
 const todoList = document.querySelector("#todo-list");
 
+const container = document.querySelector(".container");
+const quoteLine = document.querySelector("#quote");
+
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "username"
 
@@ -12,7 +15,10 @@ function onLogoutSubmit(arg) {
     greeting.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     todoList.classList.add(HIDDEN_CLASSNAME);
-    todoForm.classList.add(HIDDEN_CLASSNAME)
+    todoForm.classList.add(HIDDEN_CLASSNAME);
+
+    container.id = "containerID";
+    quoteLine.classList.remove(HIDDEN_CLASSNAME);
     localStorage.removeItem(USERNAME_KEY);
 }
 
@@ -23,6 +29,10 @@ function onLoginSubmit(arg) {
     loginForm.classList.add(HIDDEN_CLASSNAME);
     todoList.classList.remove(HIDDEN_CLASSNAME);
     todoForm.classList.remove(HIDDEN_CLASSNAME);
+
+    container.removeAttribute("id");
+    quoteLine.classList.add(HIDDEN_CLASSNAME);
+    container.classList.remove(HIDDEN_CLASSNAME);
     paintGreetings(username);
 }
 
@@ -46,6 +56,8 @@ if (savedUsername === null) {
     todoForm.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     todoList.classList.add(HIDDEN_CLASSNAME);
+
+    container.id = "containerID";
     loginForm.addEventListener('submit', onLoginSubmit);
 } else {
     paintGreetings(savedUsername)
