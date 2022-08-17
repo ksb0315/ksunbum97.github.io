@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 
-button {
+#change-name {
   /* 생략 */
     margin: 0;
     padding: 0.5rem 1rem;
@@ -25,7 +25,6 @@ header {
 }
 
 h1 {
-    padding-top: 10px;
     display: inline-block;
 }
 
@@ -54,7 +53,28 @@ input[type=submit] {
     outline: none;
     padding-left: 10px;
     background-color: rgb(233, 233, 233);
+    box-shadow: 3px 3px 3px black;
+
+    transition: 0.3s;
 }
+
+input[type=submit]:active {
+    margin-left: 5px;
+    margin-top: 5px;
+    box-shadow: none;
+}
+
+button {
+    box-shadow: 3px 3px 3px black;
+    transition: 0.3s;
+}
+
+button:active {
+    box-shadow: 3px 3px 3px black;
+    transition: 0.3s;
+}
+
+
 
 .hidden {
     display: none;
@@ -68,20 +88,131 @@ input[type=submit] {
     grid-template-rows: 1fr;
     grid-template-areas: "left right";
     grid-gap: 20px;
-    border: black solid;
+    /*border: black solid;*/
 }
 
 .left {
     grid-area: left;
     padding: 10px;
     background-color: rgba(255,255,255,0.2);
+    border-radius: 15px;
 }
+
+/* 캘린더 css */
 
 .calender {
     grid-area: right;
     padding: 10px;
     background-color: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    text-align: center;
 }
+
+.calender-prev {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.calender-next { 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#vertical {
+    border-left: thick solid black;
+    height: 90%;
+    left: 50%;
+    position: absolute;
+}
+
+#horizontal {
+    position: absolute;
+    display: flex;
+    width: 90%;
+}
+
+.calender table { 
+    display: inline-block;
+    width: 65%;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.calender table > tbody > tr > td {
+    position:relative;
+    padding: 12px 12px; 
+    text-align: center; 
+}
+
+.calender table > tbody > tr > td > span { 
+    display: block; 
+    padding: 10px 10px; 
+}
+
+.calender table > tbody > tr > td > span.today { 
+    border-radius: 20%; 
+    color: white; 
+    background-color: rgba(255,80,60,0.8); 
+    padding: 9px 9px; 
+}
+
+.calender > .calender-header { 
+    display: flex;
+    position: relative; 
+    height: 50px; 
+    margin: 0px 20px; 
+}
+
+.calender > .calender-header > .calender-yearmonth { 
+    position: relative; 
+    font-size: larger; 
+    font-weight: bolder; 
+    color: red; 
+    line-height: 50px; 
+}
+.calender > .calender-header > .calender-controls { 
+    position: absolute; 
+    top: 11px;
+    right: 0px;
+}
+
+.calender > .calender-header > .calender-controls > button {
+    float: left; width: 25px; 
+    height: 28px; 
+    padding: 1px 4px 0 4px; 
+    border: 1px solid #cbcbcb; 
+    background-color: #fff; 
+    font-size: 12px; 
+    cursor: pointer; 
+}
+
+.calender > .calender-header > .calender-controls > button.calender-today { 
+    width: 40px; 
+}
+
+.calender table > thead > tr > th.saturday {
+    color: gray; 
+}
+
+.calender table > thead > tr > th.sunday { 
+    color: red; 
+}
+
+.calender table > tbody > tr > td > span.saturday { 
+    color: gray; 
+}
+
+.calender table > tbody > tr > td > span.sunday { 
+    color: red; 
+}
+
+.calender table > tbody > tr > td#round {
+    border-radius: 10%;
+    border: black;
+}
+
 
 #change-name {
     float: right;
