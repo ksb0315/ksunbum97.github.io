@@ -19,6 +19,13 @@
 
     transition: all 0.9s, color 0.3;
 }
+/* 
+#change-name:active {
+    margin-left: 5px;
+    margin-top: 5px;
+    box-shadow: none;
+    transition: 0.3s;
+} */
 
 header {
     background-color: rgba(255,255,255,0.2);
@@ -75,7 +82,11 @@ button:active {
     transition: 0.3s;
 }
 
-
+/* .cannot-click {
+    pointer-events: none;
+    transition: none;
+    color: rgba(0,0,0,0.4);
+} */
 
 .hidden {
     display: none;
@@ -146,10 +157,21 @@ button:active {
     text-align: center;
 }
 
+#clicked-day {
+    border-radius: 20%; 
+    color: white; 
+    background-color: rgba(60, 115, 255, 0.8); 
+    padding: 9px 9px;
+}
+
+/* tbody부분 */
 .calender table > tbody > tr > td {
     position:relative;
     padding: 12px 12px; 
     text-align: center; 
+
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 .calender table > tbody > tr > td > span { 
@@ -163,7 +185,15 @@ button:active {
     background-color: rgba(255,80,60,0.8); 
     padding: 9px 9px; 
 }
+.calender table > tbody > tr > td > span.saturday { 
+    color: gray; 
+}
 
+.calender table > tbody > tr > td > span.sunday { 
+    color: red; 
+}
+
+/* thead부분 */
 .calender > .calender-header { 
     display: flex;
     position: relative; 
@@ -204,19 +234,6 @@ button:active {
 
 .calender table > thead > tr > th.sunday { 
     color: red; 
-}
-
-.calender table > tbody > tr > td > span.saturday { 
-    color: gray; 
-}
-
-.calender table > tbody > tr > td > span.sunday { 
-    color: red; 
-}
-
-.calender table > tbody > tr > td#round {
-    border-radius: 10%;
-    border: black;
 }
 
 

@@ -23,6 +23,16 @@ function calenderHTML(date) {
 
     var calenderLayout = document.createElement("table");
 
+    //table column 너비 (반응형)
+    var calenderCol = document.createElement("colgroup");
+    for (var i = 0; i < 7; i++) {
+        var dayColumn = document.createElement("col");
+        dayColumn.width = `${100/7}%`
+        calenderCol.appendChild(dayColumn);
+    }
+    calenderLayout.appendChild(calenderCol);
+
+
     var yearmonthOnCal = document.querySelector(".calender-yearmonth");
     yearmonthOnCal.innerText = `${calenderYear}.${calenderMonth}`;
 
@@ -131,11 +141,33 @@ todayButton.addEventListener("click", function() {
     calenderHTML(new Date());
 });
 
+function dateClicked(event) {
+    console.log("clikc")
+    var yearmonth = document.querySelector(".calender-yearmonth").textContent.split(".");
 
+    if (document.getElementById("clicked-day")) {
+        var postClicked = document.querySelector("#clicked-day");
+        postClicked.removeAttribute('id');
+
+        if (event.target.localName == "td") {
+            event.target.childNodes[0].id = "clicked-day";
+        }
+        else {
+            event.target.id = "clicked-day";
+        }
+    }else {
+        if (event.target.localName == "td") {
+            event.target.childNodes[0].id = "clicked-day";
+        }
+        else {
+            event.target.id = "clicked-day";
+        }
+    }
+
+
+    // alert(`${yearmonth[0]}.${yearmonth[1]}.${event.target.textContent}`) 
+ }
 
 var dayClick = document.querySelector(".calender table > tbody");
-console.dir(dayClick);
-dayClick.addEventListener("click", function(event) {
-   var yearmonth = document.querySelector(".calender-yearmonth").textContent.split(".");
-   alert(`${yearmonth[0]}.${yearmonth[1]}.${event.target.textContent}`) 
-});
+
+dayClick.addEventListener("click", dateClicked);
