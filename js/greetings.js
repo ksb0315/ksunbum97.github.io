@@ -56,9 +56,11 @@ if (savedUsername === null) {
     todoForm.classList.add(HIDDEN_CLASSNAME);
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     todoList.classList.add(HIDDEN_CLASSNAME);
+    quoteLine.classList.remove(HIDDEN_CLASSNAME)
 
     container.id = "containerID";
     loginForm.addEventListener('submit', onLoginSubmit);
 } else {
+    quoteLine.classList.add(HIDDEN_CLASSNAME)
     paintGreetings(savedUsername)
 }
